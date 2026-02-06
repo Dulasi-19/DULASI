@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dulasimanickam.R | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&family=Abril+Fatface&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+    <div class="bubble-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Loader Component Injected -->
+    <div id="loader-wrapper"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-1000">
+        <div class="loader-content flex flex-col items-center">
+            <svg width="300" height="200" viewBox="0 0 300 200" class="flex items-center justify-center">
+                <text x="50%" y="70%" text-anchor="middle" class="elegant-text">19</text>
+            </svg>
+        </div>
+    </div>
+    <style>
+        .elegant-text {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 150px;
+            fill: transparent;
+            stroke: white;
+            stroke-width: 2px;
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: elegantDraw 3s forwards infinite;
+        }
+
+        @keyframes elegantDraw {
+            0% {
+                stroke-dashoffset: 500;
+                fill: transparent;
+            }
+
+            50% {
+                stroke-dashoffset: 0;
+                fill: transparent;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+                fill: white;
+            }
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+    <!-- End Loader Component -->
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-40 px-10 py-6 flex justify-between items-center mix-blend-difference">
+        <span class="text-xl font-bold tracking-tighter">DR.</span>
+        <div class="flex gap-8 text-xs uppercase tracking-widest font-light">
+            <a href="#about" class="hover:opacity-50 transition">About</a>
+            <a href="#resume" class="hover:opacity-50 transition">Resume</a>
+            <a href="#work" class="hover:opacity-50 transition">Work</a>
+            <a href="#contact" class="hover:opacity-50 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="min-h-screen flex flex-col items-center justify-center px-6 relative">
+        <div class="max-w-4xl w-full text-center">
+            <h1 class="text-6xl md:text-9xl font-bold tracking-tighter mb-8 reveal" id="hero-title">
+                Dulasimanickam.R
+            </h1>
+            <div class="h-[1px] w-24 bg-white/30 mx-auto mb-12 reveal" style="transition-delay: 0.2s"></div>
+
+            <div class="grid md:grid-cols-2 gap-6 reveal" style="transition-delay: 0.4s">
+                <div class="glass-card p-8 rounded-3xl text-left">
+                    <h2 class="text-gray-500 uppercase tracking-widest text-[10px] mb-3">Professional Title</h2>
+                    <p class="text-2xl font-light tracking-tight">Software Developer & Designer</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl text-left">
+                    <h2 class="text-gray-500 uppercase tracking-widest text-[10px] mb-3">Key Identity</h2>
+                    <p class="text-2xl font-light tracking-tight">Born Jan 19, 2002</p>
+                </div>
+            </div>
+
+            <!-- Row 1: Stats -->
+            <div class="grid md:grid-cols-2 gap-6 mt-8 reveal" style="transition-delay: 0.5s">
+                <div class="glass-card p-8 rounded-3xl text-center group hover:scale-[1.02] transition-transform">
+                    <div
+                        class="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        2+</div>
+                    <p class="text-xs uppercase tracking-widest text-gray-500">Years Experience</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl text-center group hover:scale-[1.02] transition-transform">
+                    <div
+                        class="text-5xl font-bold mb-2 bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
+                        15+</div>
+                    <p class="text-xs uppercase tracking-widest text-gray-500">Projects Completed</p>
+                </div>
+            </div>
+
+            <!-- Row 2: Achievements -->
+            <div class="grid md:grid-cols-3 gap-6 mt-8 reveal" style="transition-delay: 0.6s">
+                <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-3">🏆</div>
+                    <h4 class="text-sm font-semibold mb-2">A+ Grade</h4>
+                    <p class="text-xs text-gray-500">M.Sc Computer Science</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-3">💼</div>
+                    <h4 class="text-sm font-semibold mb-2">Full Stack</h4>
+                    <p class="text-xs text-gray-500">Laravel & .NET Expert</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-3">🎯</div>
+                    <h4 class="text-sm font-semibold mb-2">Problem Solver</h4>
+                    <p class="text-xs text-gray-500">Innovative Solutions</p>
+                </div>
+            </div>
+
+            <!-- Row 3: Core Values -->
+            <div class="grid md:grid-cols-2 gap-6 mt-8 reveal" style="transition-delay: 0.7s">
+                <div class="glass-card p-8 rounded-3xl text-left hover:scale-[1.02] transition-transform">
+                    <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-3">Philosophy</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">Code with clarity, build with purpose, and always
+                        prioritize the human experience behind every interface.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl text-left hover:scale-[1.02] transition-transform">
+                    <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-3">Approach</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">Merging technical excellence with creative design
+                        to deliver scalable, maintainable, and beautiful solutions.</p>
+                </div>
+            </div>
+
+            <div class="mt-20 reveal" style="transition-delay: 0.6s">
+                <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed text-sm font-light mb-12">
+                    I am a dedicated Software Developer with a deep-seated passion for crafting efficient, scalable, and
+                    visually stunning digital products.
+                    Merging technical expertise in back-end architectures with a keen eye for modern UI/UX design, I
+                    strive to build applications that are as powerful as they are intuitive.
+                    Whether it's architecting complex server-side logic or fine-tuning the smallest micro-interaction,
+                    my goal is always the same: to create software that solves real-world problems while delivering an
+                    exceptional user experience.
+                    I believe that great code is not just about functionality, but also about clarity, maintainability,
+                    and the human impact of the final product.
+                </p>
+                <a href="#resume"
+                    class="px-10 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:invert transition-all duration-500 rounded-full">
+                    View Resume
+                </a>
+            </div>
+        </div>
+
+        <!-- Background Decoration -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-[0.02] blur-[120px] rounded-full -z-10">
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="min-h-screen py-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
+                <div>
+                    <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Curriculum Vitae</h3>
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">My Journey</h2>
+                </div>
+                <a href="resume.pdf" download="Dulasimanickam_Resume.pdf"
+                    class="flex items-center gap-2 text-xs uppercase tracking-widest font-bold border-b border-white pb-1 hover:opacity-50 transition drop-shadow-sm">
+                    Download Full Resume
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 13l5 5 5-5M12 18V6" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Experience -->
+                <div class="md:col-span-2 space-y-12">
+                    <div class="reveal">
+                        <div class="text-xs text-gray-400 mb-6 flex items-center gap-4">
+                            <span class="h-[1px] w-8 bg-gray-800"></span>
+                            EXPERIENCE
+                        </div>
+                        <div class="space-y-12">
+                            <div class="group">
+                                <span class="text-[10px] text-gray-600 block mb-2">PRESENT</span>
+                                <h4 class="text-xl font-semibold mb-2 group-hover:text-blue-400 transition">Web
+                                    Developer</h4>
+                                <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-3">Ginzee Infotec Pvt
+                                    Ltd, Aranthangi</p>
+                                <p class="text-gray-400 text-sm leading-relaxed font-light mt-4">
+                                    At Ginzee Infotec, I am responsible for the end-to-end development of diverse web
+                                    applications, leveraging the power of <strong>Laravel</strong> and
+                                    <strong>.NET</strong>.
+                                    My work involves designing robust database structures, implementing secure API
+                                    endpoints, and building responsive, high-performance user interfaces.
+                                    I actively participate in the entire software development lifecycle, from initial
+                                    requirement gathering to deployment and maintenance.
+                                    By integrating modern DevOps practices and focusing on code quality, I ensure that
+                                    our digital products meet the highest standards of reliability and scalability.
+                                    My role also includes collaborating with cross-functional teams to translate complex
+                                    business needs into elegant technical solutions that drive innovation and user
+                                    satisfaction.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <div class="text-xs text-gray-400 mb-6 flex items-center gap-4">
+                            <span class="h-[1px] w-8 bg-gray-800"></span>
+                            EDUCATION
+                        </div>
+                        <div class="space-y-12">
+                            <div class="group">
+                                <span class="text-[10px] text-gray-600 block mb-2">2022 — 2024</span>
+                                <h4 class="text-xl font-semibold mb-1">M.Sc Computer Science</h4>
+                                <p class="text-sm text-gray-500 italic mb-1 text-xs">AVASC, Thanjavur</p>
+                                <p class="text-[10px] text-blue-400 font-bold tracking-widest uppercase mb-4">A+ Grade
+                                </p>
+                                <p class="text-gray-400 text-sm leading-relaxed font-light mt-4">
+                                    During my Master's program at AVASC, I focused on advanced computational theories,
+                                    exploring the depths of machine learning, cloud computing, and big data analytics.
+                                    My academic journey was marked by a commitment to technical excellence, culminating
+                                    in an A+ grade which reflects my dedication to mastering complex systems.
+                                    I engaged in significant research projects that challenged my analytical skills and
+                                    pushed me to explore innovative solutions for large-scale data processing.
+                                    The rigorous curriculum provided me with a strong theoretical foundation, which I
+                                    consistently applied to practical, project-based learning.
+                                    This period was instrumental in refining my problem-solving abilities and instilling
+                                    a lifelong habit of staying current with emerging technological trends.
+                                    By collaborating with peers and mentors, I was able to bridge the gap between
+                                    abstract academic concepts and their real-world applications in software
+                                    development.
+                                </p>
+                            </div>
+                            <div class="group">
+                                <span class="text-[10px] text-gray-600 block mb-2">2020 — 2024</span>
+                                <h4 class="text-xl font-semibold mb-1">Bachelor of Science</h4>
+                                <p class="text-sm text-gray-500 italic mb-3 text-xs">Computer Science</p>
+                                <p class="text-gray-400 text-sm leading-relaxed font-light mt-4">
+                                    My Bachelor's degree laid the groundwork for my career in software engineering.
+                                    I gained a comprehensive understanding of core computer science concepts, including
+                                    data structures, algorithms, database management systems, and operating systems.
+                                    The program emphasized both theoretical knowledge and hands-on coding practice
+                                    across multiple programming languages.
+                                    I participated in various hackathons and collaborative projects, which helped me
+                                    develop strong teamwork and communication skills.
+                                    This foundational education sparked my interest in full-stack development and
+                                    motivated me to pursue advanced studies in the field, always striving to build a
+                                    bridge between technical logic and user-centric design.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="space-y-12 reveal" style="transition-delay: 0.2s">
+                    <div>
+                        <div class="text-xs text-gray-400 mb-6 flex items-center gap-4">
+                            <span class="h-[1px] w-8 bg-gray-800"></span>
+                            CORE SKILLS
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- HTML -->
+                            <div
+                                class="skill-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 group">
+                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🌐</span>
+                                <span class="font-bold tracking-widest text-xs">HTML</span>
+                            </div>
+                            <!-- CSS -->
+                            <div
+                                class="skill-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 group">
+                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🎨</span>
+                                <span class="font-bold tracking-widest text-xs">CSS</span>
+                            </div>
+                            <!-- JS -->
+                            <div
+                                class="skill-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 group">
+                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">⚡</span>
+                                <span class="font-bold tracking-widest text-xs">JS</span>
+                            </div>
+                            <!-- .NET -->
+                            <div
+                                class="skill-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 group">
+                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🔧</span>
+                                <span class="font-bold tracking-widest text-xs">.NET</span>
+                            </div>
+                            <!-- Laravel -->
+                            <div
+                                class="skill-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 group">
+                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🚀</span>
+                                <span class="font-bold tracking-widest text-xs">LARAVEL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 1: Certifications -->
+                    <div class="reveal" style="transition-delay: 0.3s">
+                        <div class="text-xs text-gray-400 mb-6 flex items-center gap-4">
+                            <span class="h-[1px] w-8 bg-gray-800"></span>
+                            CERTIFICATIONS
+                        </div>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                                <div class="text-3xl mb-3">📜</div>
+                                <h4 class="text-xs font-bold mb-1">Web Development</h4>
+                                <p class="text-[10px] text-gray-500">Full Stack Certified</p>
+                            </div>
+                            <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                                <div class="text-3xl mb-3">🎓</div>
+                                <h4 class="text-xs font-bold mb-1">Laravel Expert</h4>
+                                <p class="text-[10px] text-gray-500">Advanced Level</p>
+                            </div>
+                            <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                                <div class="text-3xl mb-3">⚙️</div>
+                                <h4 class="text-xs font-bold mb-1">.NET Developer</h4>
+                                <p class="text-[10px] text-gray-500">Professional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Skill Progress -->
+                    <div class="reveal" style="transition-delay: 0.4s">
+                        <div class="text-xs text-gray-400 mb-6 flex items-center gap-4">
+                            <span class="h-[1px] w-8 bg-gray-800"></span>
+                            PROFICIENCY
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-xs">Backend</span>
+                                        <span class="text-xs text-gray-500">95%</span>
+                                    </div>
+                                    <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                                            style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-xs">Frontend</span>
+                                        <span class="text-xs text-gray-500">85%</span>
+                                    </div>
+                                    <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-pink-500 to-orange-500 rounded-full"
+                                            style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Tools -->
+                    <div class="reveal" style="transition-delay: 0.5s">
+                        <div class="text-xs text-gray-400 mb-6 flex items-center gap-4">
+                            <span class="h-[1px] w-8 bg-gray-800"></span>
+                            TOOLS
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge">Git</span>
+                                <span class="skill-badge">Docker</span>
+                                <span class="skill-badge">MySQL</span>
+                                <span class="skill-badge">Redis</span>
+                                <span class="skill-badge">Tailwind</span>
+                                <span class="skill-badge">Vue.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl space-y-6">
+                        <h4 class="text-xs font-bold uppercase tracking-widest mb-2">Contact</h4>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Email</p>
+                                <p class="text-sm">dulasimanickam@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Location</p>
+                                <p class="text-sm">Aranthangi, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Work Section -->
+    <section id="work" class="py-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Latest Project</h3>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Selected Work</h2>
+                <div class="h-[1px] w-12 bg-white/20 mx-auto mt-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="reveal glass-card p-2 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-500">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden">
+                        <img src="project.png" alt="Latest Project"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                            <div
+                                class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <span
+                                    class="inline-block px-3 py-1 mb-4 text-[10px] font-bold tracking-widest uppercase bg-white text-black rounded-full">Web
+                                    Application</span>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-3">Modern Analytics Dashboard</h3>
+                                <p class="text-gray-300 text-sm font-light max-w-xl leading-relaxed">
+                                    A high-performance data visualization platform built with Laravel and .NET. Features
+                                    real-time analytics, dynamic charting, and a comprehensive user management system
+                                    wrapped in a sleek, dark-mode interface.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal glass-card p-2 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-500">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden">
+                        <img src="vkn_finance.png" alt="VKN Finance App"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+                            <div
+                                class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <span
+                                    class="inline-block px-3 py-1 mb-4 text-[10px] font-bold tracking-widest uppercase bg-white text-black rounded-full">Finance
+                                    Application</span>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-3">VKN_FINANCE_APP</h3>
+                                <p class="text-gray-300 text-sm font-light max-w-xl leading-relaxed">
+                                    A comprehensive financial management solution designed for real-time asset tracking
+                                    and market analysis. Built with precision and trust in mind, featuring a secure
+                                    backend and an intuitive, gold-accented professional interface.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 1: Additional Project -->
+            <div class="mt-12 reveal">
+                <div
+                    class="glass-card p-2 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-500">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center">
+                            <div class="text-center p-12">
+                                <span
+                                    class="inline-block px-3 py-1 mb-4 text-[10px] font-bold tracking-widest uppercase bg-white text-black rounded-full">E-Commerce
+                                    Platform</span>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-3">Online Marketplace</h3>
+                                <p class="text-gray-300 text-sm font-light max-w-2xl mx-auto leading-relaxed">
+                                    A scalable e-commerce solution with payment gateway integration, inventory
+                                    management, and real-time order tracking. Built for performance and security.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Mini Projects -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12 reveal">
+                <div class="glass-card p-6 rounded-3xl hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h4 class="text-lg font-semibold mb-2">Task Manager</h4>
+                    <p class="text-xs text-gray-400 mb-4">Productivity app with real-time collaboration</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] px-2 py-1 bg-white/5 rounded">Laravel</span>
+                        <span class="text-[10px] px-2 py-1 bg-white/5 rounded">Vue.js</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h4 class="text-lg font-semibold mb-2">Analytics Tool</h4>
+                    <p class="text-xs text-gray-400 mb-4">Data visualization dashboard</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] px-2 py-1 bg-white/5 rounded">.NET</span>
+                        <span class="text-[10px] px-2 py-1 bg-white/5 rounded">Chart.js</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-4">🔐</div>
+                    <h4 class="text-lg font-semibold mb-2">Auth System</h4>
+                    <p class="text-xs text-gray-400 mb-4">Secure authentication platform</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] px-2 py-1 bg-white/5 rounded">Laravel</span>
+                        <span class="text-[10px] px-2 py-1 bg-white/5 rounded">JWT</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Testimonials -->
+            <div class="grid md:grid-cols-2 gap-8 mt-12 reveal">
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-sm text-gray-300 leading-relaxed mb-6 italic">
+                        "Exceptional work! The application exceeded our expectations in both functionality and design.
+                        Highly professional and responsive throughout the project."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-sm font-bold">
+                            JD
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold">John Doe</p>
+                            <p class="text-[10px] text-gray-500">CEO, Tech Corp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                        <span class="text-yellow-400">★</span>
+                    </div>
+                    <p class="text-sm text-gray-300 leading-relaxed mb-6 italic">
+                        "Outstanding developer with great attention to detail. Delivered a robust solution on time and
+                        within budget. Would definitely work with again!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-orange-500 flex items-center justify-center text-sm font-bold">
+                            SM
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold">Sarah Miller</p>
+                            <p class="text-[10px] text-gray-500">Founder, StartupXYZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Let's Connect</h3>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Get In Touch</h2>
+                <div class="h-[1px] w-12 bg-white/20 mx-auto mt-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="space-y-8 reveal" style="transition-delay: 0.2s">
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        visions. Feel free to reach out through the form or my direct contact channels.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Email</p>
+                                <p class="text-sm">dulasimanickam@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Location</p>
+                                <p class="text-sm">Aranthangi, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm" action="#" method="POST" class="glass-card p-8 rounded-3xl space-y-6 reveal"
+                    style="transition-delay: 0.4s">
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 ml-1">Name</label>
+                        <input type="text" name="name" placeholder="Your Name" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-white/30 transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 ml-1">Email</label>
+                        <input type="email" name="email" placeholder="Your Email" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-white/30 transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-gray-500 ml-1">Message</label>
+                        <textarea name="message" rows="4" placeholder="Your Message" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-white/30 transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn"
+                        class="w-full py-4 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-xl hover:invert transition-all duration-500 flex items-center justify-center gap-2">
+                        <span id="btnText">Send Message</span>
+                        <div id="btnLoader"
+                            class="hidden w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin">
+                        </div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Row 1: Services -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12 reveal">
+                <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-3">💻</div>
+                    <h4 class="text-sm font-semibold mb-2">Web Development</h4>
+                    <p class="text-xs text-gray-400">Custom web applications built with modern frameworks</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h4 class="text-sm font-semibold mb-2">UI/UX Design</h4>
+                    <p class="text-xs text-gray-400">User-centric interfaces with premium aesthetics</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div class="text-3xl mb-3">📱</div>
+                    <h4 class="text-sm font-semibold mb-2">Responsive Design</h4>
+                    <p class="text-xs text-gray-400">Seamless detailed experience across all devices</p>
+                </div>
+            </div>
+
+            <!-- Row 2: Availability -->
+            <div class="grid md:grid-cols-2 gap-6 mt-8 reveal">
+                <div class="glass-card p-8 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div
+                        class="inline-block px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
+                        Status
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Available for Work</h4>
+                    <p class="text-xs text-gray-400">Currently accepting new projects and consulting</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl text-center hover:scale-[1.02] transition-transform">
+                    <div
+                        class="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
+                        Response Time
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">&lt; 24 Hours</h4>
+                    <p class="text-xs text-gray-400">Quick turnaround for initial consultations</p>
+                </div>
+            </div>
+
+            <!-- Row 3: Social Stats -->
+            <div class="grid md:grid-cols-3 gap-6 mt-8 reveal">
+                <a href="https://github.com/Dulasi-19" target="_blank"
+                    class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform group">
+                    <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">🐙</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-500">GitHub</p>
+                    <p class="text-sm mt-1">Check my code</p>
+                </a>
+                <a href="https://www.linkedin.com/in/dulasimanickam" target="_blank"
+                    class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform group">
+                    <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">💼</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-500">LinkedIn</p>
+                    <p class="text-sm mt-1">Connect professionally</p>
+                </a>
+                <a href="mailto:dulasimanickam@gmail.com"
+                    class="glass-card p-6 rounded-3xl text-center hover:scale-[1.02] transition-transform group">
+                    <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">📧</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-500">Email</p>
+                    <p class="text-sm mt-1">Get in touch</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Popup -->
+    <div id="successPopup"
+        class="fixed inset-0 z-[60] flex items-center justify-center px-6 opacity-0 pointer-events-none transition-all duration-500">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        <div class="glass-card p-12 rounded-[40px] max-w-sm w-full text-center relative z-10 scale-90 transition-transform duration-500"
+            id="popupContent">
+            <div
+                class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-8 animate-bounce">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h2 class="text-3xl font-bold tracking-tighter mb-4">Message Sent!</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mb-10 font-light">Thanks to approach me, I will respond
+                shortly!</p>
+            <button onclick="closePopup()"
+                class="w-full py-4 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/916380534946" target="_blank"
+        class="fixed bottom-10 right-10 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95 group">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span
+            class="absolute right-full mr-4 bg-white text-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Chat
+            on WhatsApp</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 text-center">
+        <p class="text-[10px] text-gray-600 tracking-[0.3em] uppercase mb-4">&copy; 2026 Dulasimanickam.R</p>
+        <div class="flex justify-center gap-8 items-center mt-4">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/dulasimanickam" target="_blank" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z">
+                    </path>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/Dulasi-19" target="_blank" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
