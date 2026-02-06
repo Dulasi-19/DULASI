@@ -69,6 +69,41 @@ function closePopup() {
     }
 }
 
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+const bar1 = document.getElementById('bar1');
+const bar2 = document.getElementById('bar2');
+const bar3 = document.getElementById('bar3');
+
+function toggleMenu() {
+    mobileMenu.classList.toggle('-translate-y-full');
+    mobileMenu.classList.toggle('translate-y-0');
+
+    // Animate hamburger to X
+    bar1.classList.toggle('rotate-45');
+    bar1.classList.toggle('translate-y-2');
+    bar2.classList.toggle('opacity-0');
+    bar3.classList.toggle('-rotate-45');
+    bar3.classList.toggle('-translate-y-2');
+
+    // Prevent body scroll
+    document.body.classList.toggle('overflow-hidden');
+}
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', toggleMenu);
+}
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('translate-y-0')) {
+            toggleMenu();
+        }
+    });
+});
+
 // Loader script from components/loader.blade.php
 window.addEventListener('load', function () {
     const loader = document.getElementById('loader-wrapper');
